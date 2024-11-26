@@ -38,7 +38,11 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
-        <Script src="/mm-text-animation.js" />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js" strategy="beforeInteractive" />
+        <Script src="https://unpkg.com/split-type" strategy="beforeInteractive" />
+        <Script src="/mm-text-animation.js" strategy="afterInteractive" />
       </head>
       <body className="flex min-h-full bg-white dark:bg-slate-900">
         <Providers>
