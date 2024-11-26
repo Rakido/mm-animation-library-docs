@@ -1,74 +1,269 @@
 ---
-title: Introdution to string theory
+title: Lines Animation
 nextjs:
   metadata:
-    title: Introdution to string theory
-    description: Quidem magni aut exercitationem maxime rerum eos.
+    title: Lines Animation
+    description: Learn how to animate text lines using MoonMoon Animation Library.
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+The MoonMoon Animation Library provides powerful line-based text animations. This guide covers how to animate text lines and all available configuration options.
 
 ---
 
-## Quis vel iste dicta
+## Basic Line Animation
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+To animate lines of text, use `data-scroll-text-reveal` with `data-splitting="lines"`:
 
-### Et pariatur ab quas
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
-```js
-/** @type {import('@tailwindlabs/lorem').ipsum} */
-export default {
-  lorem: 'ipsum',
-  dolor: ['sit', 'amet', 'consectetur'],
-  adipiscing: {
-    elit: true,
-  },
-}
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="fade-in"
+>
+  This text will be split
+  into separate lines that
+  animate independently.
+</p>
 ```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
-
-### Natus aspernatur iste
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
-Voluptas beatae omnis omnis voluptas. Cum architecto ab sit ad eaque quas quia distinctio. Molestiae aperiam qui quis deleniti soluta quia qui. Dolores nostrum blanditiis libero optio id. Mollitia ad et asperiores quas saepe alias.
+The `data-splitting="lines"` attribute automatically splits text blocks into individual lines for animation.
 
 ---
 
-## Quos porro ut molestiae
+## Line Animation Types
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+### Lines-Up Animation
 
-### Voluptatem quas possimus
+The specialized `lines-up` animation creates a revealing effect for each line:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<div 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="lines-up"
+  data-duration="1.2"
+  data-stagger="0.15"
+>
+  Each line will slide up
+  from behind its container,
+  creating a smooth reveal effect.
+</div>
+```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+### Basic Fade Animation
 
-### Id vitae minima
+Simple fade animations can be applied to lines:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="fade-in"
+  data-fade-start="0"
+  data-duration="1"
+  data-stagger="0.2"
+>
+  Each line fades in
+  one after another,
+  creating a readable sequence.
+</p>
+```
 
-Voluptas beatae omnis omnis voluptas. Cum architecto ab sit ad eaque quas quia distinctio. Molestiae aperiam qui quis deleniti soluta quia qui. Dolores nostrum blanditiis libero optio id. Mollitia ad et asperiores quas saepe alias.
+### Slide Animation
+
+Lines can slide in from any direction:
+
+```html
+<h2 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="slide"
+  data-axis="x"
+  data-duration="1.2"
+  data-stagger="0.1"
+>
+  These lines will slide
+  in from the right side
+  of the screen.
+</h2>
+```
 
 ---
 
-## Vitae laborum maiores
+## Timing and Sequence
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+### Stagger Control
 
-### Corporis exercitationem
+Control the timing between lines:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<div 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="lines-up"
+  data-stagger="0.25"
+  data-duration="1.5"
+>
+  Longer gaps between
+  each line reveal
+  for dramatic effect.
+</div>
+```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+### Custom Animation Sequence
 
-### Reprehenderit magni
+Combine delay and stagger for complex sequences:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="slide"
+  data-axis="y"
+  data-delay="0.5"
+  data-stagger="0.15"
+  data-duration="1.2"
+>
+  This paragraph will wait
+  before starting its animation,
+  then reveal line by line.
+</p>
+```
 
-Voluptas beatae omnis omnis voluptas. Cum architecto ab sit ad eaque quas quia distinctio. Molestiae aperiam qui quis deleniti soluta quia qui. Dolores nostrum blanditiis libero optio id. Mollitia ad et asperiores quas saepe alias.
+---
+
+## Advanced Effects
+
+### Combining Animations
+
+Multiple animation effects can be applied to lines:
+
+```html
+<div 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="fade-in slide"
+  data-axis="y"
+  data-stagger="0.2"
+  data-duration="1.5"
+  data-easing="power2.out"
+>
+  These lines will fade
+  and slide simultaneously,
+  creating a smooth entrance.
+</div>
+```
+
+### Custom Easing
+
+Fine-tune the animation motion:
+
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="lines-up"
+  data-easing="0.7,0,0.3,1"
+  data-duration="1.2"
+  data-stagger="0.15"
+>
+  Custom easing makes
+  these lines move with
+  a unique motion curve.
+</p>
+```
+
+---
+
+## Best Practices
+
+1. **Line Length**:
+   ```html
+   <!-- Good: Clear line breaks -->
+   <h1 
+     data-scroll-text-reveal 
+     data-splitting="lines"
+     data-animate="lines-up"
+   >
+     Short, impactful lines
+     work best for
+     dramatic reveals.
+   </h1>
+
+   <!-- Avoid: Very long lines -->
+   <p data-scroll-text-reveal data-splitting="lines">
+     Very long lines of text that might wrap unpredictably on different screen sizes should be avoided for line animations...
+   </p>
+   ```
+
+2. **Timing Considerations**:
+   - Use longer `data-stagger` values (0.15-0.3s) than with words or characters
+   - Consider reading time when setting durations
+   - Longer lines need longer animation durations
+
+3. **Responsive Design**:
+   - Lines will automatically recalculate on screen resize
+   - Test animations at different viewport widths
+   - Consider using CSS max-width to control line length
+
+4. **Animation Direction**:
+   ```html
+   <!-- Standard bottom-up reveal -->
+   <div 
+     data-scroll-text-reveal 
+     data-splitting="lines"
+     data-animate="lines-up"
+   >
+     Lines reveal from
+     bottom to top for
+     natural reading flow.
+   </div>
+
+   <!-- Alternative directions -->
+   <div 
+     data-scroll-text-reveal 
+     data-splitting="lines"
+     data-animate="slide"
+     data-axis="-x"
+   >
+     Lines can also slide
+     in from the left for
+     variety in presentation.
+   </div>
+   ```
+
+---
+
+## Common Use Cases
+
+### Article Headlines
+```html
+<h1 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="lines-up"
+  data-stagger="0.2"
+  data-duration="1.5"
+>
+  Create dramatic
+  article introductions
+  with line reveals.
+</h1>
+```
+
+### Content Blocks
+```html
+<div 
+  data-scroll-text-reveal 
+  data-splitting="lines"
+  data-animate="fade-in slide"
+  data-axis="y"
+  data-stagger="0.15"
+>
+  Perfect for revealing
+  blocks of content as
+  users scroll down the page.
+</div>
+```
+
+Remember that line animations are automatically scroll-triggered, activating when the element enters the viewport and reversing on scroll up. This makes them perfect for long-form content and storytelling experiences.

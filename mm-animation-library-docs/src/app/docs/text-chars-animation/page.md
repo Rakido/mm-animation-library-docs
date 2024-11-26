@@ -24,6 +24,7 @@ To animate characters, you'll need to use two core attributes: `data-scroll-text
 </h1>
 ```
 
+
 The `data-scroll-text-reveal` attribute initializes the animation system, while `data-splitting="chars"` tells the library to split the text into individual characters.
 
 ---

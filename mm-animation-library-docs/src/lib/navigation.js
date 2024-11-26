@@ -22,7 +22,7 @@ export const navigation = [
     ],
   },
   {
-    title: 'Advanced guides',
+    title: 'Layout reveal [TODO]',
     links: [
       { title: 'Writing plugins', href: '/docs/writing-plugins' },
       { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
@@ -36,7 +36,7 @@ export const navigation = [
     ],
   },
   {
-    title: 'API reference',
+    title: 'Staggering [TODO]',
     links: [
       { title: 'CacheAdvance.predict()', href: '/docs/cacheadvance-predict' },
       { title: 'CacheAdvance.flush()', href: '/docs/cacheadvance-flush' },
@@ -45,7 +45,7 @@ export const navigation = [
     ],
   },
   {
-    title: 'Contributing',
+    title: 'Parrallax [TODO]',
     links: [
       { title: 'How to contribute', href: '/docs/how-to-contribute' },
       { title: 'Architecture guide', href: '/docs/architecture-guide' },

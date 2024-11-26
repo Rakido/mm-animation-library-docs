@@ -1,74 +1,249 @@
 ---
-title: Basics of time-travel
+title: Words Animation
 nextjs:
   metadata:
-    title: Basics of time-travel
-    description: Quidem magni aut exercitationem maxime rerum eos.
+    title: Words Animation
+    description: Learn how to animate words using MoonMoon Animation Library.
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+The MoonMoon Animation Library provides sophisticated word-based animations through simple data attributes. This guide covers word animations and their configuration options.
 
 ---
 
-## Quis vel iste dicta
+## Basic Word Animation
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+To animate words, use `data-scroll-text-reveal` with `data-splitting="words"`:
 
-### Et pariatur ab quas
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
-```js
-/** @type {import('@tailwindlabs/lorem').ipsum} */
-export default {
-  lorem: 'ipsum',
-  dolor: ['sit', 'amet', 'consectetur'],
-  adipiscing: {
-    elit: true,
-  },
-}
+```html
+<h1 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="fade-in"
+>
+  Each word will animate separately
+</h1>
 ```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
-
-### Natus aspernatur iste
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
-Voluptas beatae omnis omnis voluptas. Cum architecto ab sit ad eaque quas quia distinctio. Molestiae aperiam qui quis deleniti soluta quia qui. Dolores nostrum blanditiis libero optio id. Mollitia ad et asperiores quas saepe alias.
+The `data-splitting="words"` attribute tells the library to treat each word as an individual animated element.
 
 ---
 
-## Quos porro ut molestiae
+## Word Animation Types
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+### Basic Fade Animation
 
-### Voluptatem quas possimus
+The simplest word animation is fade-in:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="fade-in"
+  data-fade-start="0"
+  data-duration="1"
+  data-stagger="0.1"
+>
+  Each word fades in one after another
+</p>
+```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+### Slide Animation
 
-### Id vitae minima
+Words can slide in from any direction:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<h2 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="slide"
+  data-axis="x"
+  data-duration="1.2"
+  data-stagger="0.08"
+>
+  Words sliding in from the right
+</h2>
+```
 
-Voluptas beatae omnis omnis voluptas. Cum architecto ab sit ad eaque quas quia distinctio. Molestiae aperiam qui quis deleniti soluta quia qui. Dolores nostrum blanditiis libero optio id. Mollitia ad et asperiores quas saepe alias.
+### Shutter Effect
+
+The unique shutter effect is specifically designed for word animations:
+
+```html
+<div 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="shutter-word"
+  data-color="#4f46e5"
+  data-axis="x"
+  data-duration="1"
+  data-stagger="0.1"
+>
+  Words reveal with a shutter effect
+</div>
+```
+
+The shutter effect supports:
+- `data-color` - Background color of the shutter
+- `data-axis` - Direction of the shutter movement (`x`, `-x`, `y`, `-y`)
 
 ---
 
-## Vitae laborum maiores
+## Timing and Sequence
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+### Stagger Control
 
-### Corporis exercitationem
+Control the timing between words:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="fade-in"
+  data-stagger="0.15"
+  data-duration="1"
+>
+  Words animate with longer gaps between each
+</p>
+```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+### Custom Animation Sequence
 
-### Reprehenderit magni
+Combine delay and stagger for complex sequences:
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+```html
+<div 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="slide"
+  data-axis="y"
+  data-delay="0.5"
+  data-stagger="0.08"
+  data-duration="1.2"
+>
+  This sentence starts after a delay
+</div>
+```
 
-Voluptas beatae omnis omnis voluptas. Cum architecto ab sit ad eaque quas quia distinctio. Molestiae aperiam qui quis deleniti soluta quia qui. Dolores nostrum blanditiis libero optio id. Mollitia ad et asperiores quas saepe alias.
+---
+
+## Advanced Effects
+
+### Combining Animations
+
+Multiple animation effects can be applied to words:
+
+```html
+<h3 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="fade-in slide"
+  data-axis="y"
+  data-stagger="0.1"
+  data-duration="1.5"
+  data-easing="power2.out"
+>
+  Words fade and slide simultaneously
+</h3>
+```
+
+### Custom Easing
+
+Fine-tune the animation motion:
+
+```html
+<p 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="slide"
+  data-axis="-x"
+  data-easing="0.7,0,0.3,1"
+  data-duration="1.2"
+  data-stagger="0.1"
+>
+  Custom easing for smoother word animations
+</p>
+```
+
+---
+
+## Best Practices
+
+1. **Readability**: 
+   - Keep `data-stagger` values between 0.05-0.15s for natural reading flow
+   - Use longer durations for emphasis on important text
+
+2. **Performance**:
+   ```html
+   <!-- Good: Reasonable number of words -->
+   <h1 data-scroll-text-reveal data-splitting="words">
+     Short impactful headline here
+   </h1>
+
+   <!-- Avoid: Too many words can impact performance -->
+   <p data-scroll-text-reveal data-splitting="words">
+     Very long paragraph with many words...
+   </p>
+   ```
+
+3. **Animation Timing**:
+   - Use faster animations (`0.8-1.2s`) for UI elements
+   - Use slower animations (`1.2-2s`) for hero sections
+   - Adjust `data-stagger` based on text length
+
+4. **Direction and Flow**:
+   ```html
+   <!-- For languages that read left-to-right -->
+   <h2 
+     data-scroll-text-reveal 
+     data-splitting="words"
+     data-animate="slide"
+     data-axis="-x"
+   >
+     Words slide in from left
+   </h2>
+
+   <!-- For vertical emphasis -->
+   <h2 
+     data-scroll-text-reveal 
+     data-splitting="words"
+     data-animate="slide"
+     data-axis="y"
+   >
+     Words slide up from bottom
+   </h2>
+   ```
+
+Remember that word animations are automatically scroll-triggered, activating when the element enters the viewport and reversing on scroll up.
+
+---
+
+## Common Patterns
+
+### Hero Headlines
+```html
+<h1 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="slide fade-in"
+  data-axis="y"
+  data-stagger="0.1"
+  data-duration="1.5"
+>
+  Create impact with animated headlines
+</h1>
+```
+
+### Navigation Menus
+```html
+<nav 
+  data-scroll-text-reveal 
+  data-splitting="words"
+  data-animate="fade-in"
+  data-stagger="0.05"
+  data-duration="0.8"
+>
+  Home About Services Contact
+</nav>
+```
+
+These patterns provide a good starting point for common use cases in web interfaces.
