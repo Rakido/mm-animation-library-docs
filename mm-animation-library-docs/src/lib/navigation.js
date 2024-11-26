@@ -7,19 +7,18 @@ export const navigation = [
     ],
   },
   {
-    title: 'Core concepts',
+    title: 'Text Animation',
     links: [
-      { title: 'Understanding caching', href: '/docs/understanding-caching' },
+      { title: 'Setup', href: '/docs/text-animation-setup' },
       {
-        title: 'Predicting user behavior',
-        href: '/docs/predicting-user-behavior',
+        title: 'Characters Animation',
+        href: '/docs/text-chars-animation',
       },
-      { title: 'Basics of time-travel', href: '/docs/basics-of-time-travel' },
+      { title: 'Words Animation', href: '/docs/text-words-animation' },
       {
-        title: 'Introduction to string theory',
-        href: '/docs/introduction-to-string-theory',
+        title: 'Lines Animation',
+        href: '/docs/text-lines-animation',
       },
-      { title: 'The butterfly effect', href: '/docs/the-butterfly-effect' },
     ],
   },
   {
