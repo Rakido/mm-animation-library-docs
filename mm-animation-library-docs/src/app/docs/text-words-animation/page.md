@@ -1,18 +1,18 @@
 ---
-title: Words Animation
+title: Animation de Mots
 nextjs:
   metadata:
-    title: Words Animation
-    description: Learn how to animate words using MoonMoon Animation Library.
+    title: Animation de Mots
+    description: Apprenez à animer des mots avec la librairie MoonMoon Animation.
 ---
 
-The MoonMoon Animation Library provides sophisticated word-based animations through simple data attributes. This guide covers word animations and their configuration options.
+La librairie MoonMoon Animation offre des animations sophistiquées basées sur les mots à travers des attributs de données simples. Ce guide couvre les animations de mots et leurs options de configuration.
 
 ---
 
-## Basic Word Animation
+## Animation de Mots Basique
 
-To animate words, use `data-scroll-text-reveal` with `data-splitting="words"`:
+Pour animer des mots, utilisez `data-scroll-text-reveal` avec `data-splitting="words"` :
 
 ```html
 <h1 
@@ -20,19 +20,19 @@ To animate words, use `data-scroll-text-reveal` with `data-splitting="words"`:
   data-splitting="words"
   data-animate="fade-in"
 >
-  Each word will animate separately
+  Chaque mot s'animera séparément
 </h1>
 ```
 
-The `data-splitting="words"` attribute tells the library to treat each word as an individual animated element.
+L'attribut `data-splitting="words"` indique à la librairie de traiter chaque mot comme un élément animé individuel.
 
 ---
 
-## Word Animation Types
+## Types d'Animation de Mots
 
-### Basic Fade Animation
+### Animation en Fondu Basique
 
-The simplest word animation is fade-in:
+L'animation la plus simple pour les mots est le fondu :
 
 ```html
 <p 
@@ -43,13 +43,13 @@ The simplest word animation is fade-in:
   data-duration="1"
   data-stagger="0.1"
 >
-  Each word fades in one after another
+  Chaque mot apparaît en fondu l'un après l'autre
 </p>
 ```
 
-### Slide Animation
+### Animation en Glissement
 
-Words can slide in from any direction:
+Les mots peuvent glisser depuis n'importe quelle direction :
 
 ```html
 <h2 
@@ -60,13 +60,13 @@ Words can slide in from any direction:
   data-duration="1.2"
   data-stagger="0.08"
 >
-  Words sliding in from the right
+  Les mots glissent depuis la droite
 </h2>
 ```
 
-### Shutter Effect
+### Effet Store
 
-The unique shutter effect is specifically designed for word animations:
+L'effet store unique est spécialement conçu pour les animations de mots :
 
 ```html
 <div 
@@ -78,21 +78,21 @@ The unique shutter effect is specifically designed for word animations:
   data-duration="1"
   data-stagger="0.1"
 >
-  Words reveal with a shutter effect
+  Les mots se révèlent avec un effet store
 </div>
 ```
 
-The shutter effect supports:
-- `data-color` - Background color of the shutter
-- `data-axis` - Direction of the shutter movement (`x`, `-x`, `y`, `-y`)
+L'effet store prend en charge :
+- `data-color` - Couleur d'arrière-plan du store
+- `data-axis` - Direction du mouvement du store (`x`, `-x`, `y`, `-y`)
 
 ---
 
-## Timing and Sequence
+## Timing et Séquence
 
-### Stagger Control
+### Contrôle du Décalage
 
-Control the timing between words:
+Contrôlez le timing entre les mots :
 
 ```html
 <p 
@@ -102,13 +102,13 @@ Control the timing between words:
   data-stagger="0.15"
   data-duration="1"
 >
-  Words animate with longer gaps between each
+  Les mots s'animent avec des écarts plus longs entre chacun
 </p>
 ```
 
-### Custom Animation Sequence
+### Séquence d'Animation Personnalisée
 
-Combine delay and stagger for complex sequences:
+Combinez délai et décalage pour des séquences complexes :
 
 ```html
 <div 
@@ -120,17 +120,17 @@ Combine delay and stagger for complex sequences:
   data-stagger="0.08"
   data-duration="1.2"
 >
-  This sentence starts after a delay
+  Cette phrase commence après un délai
 </div>
 ```
 
 ---
 
-## Advanced Effects
+## Effets Avancés
 
-### Combining Animations
+### Combinaison d'Animations
 
-Multiple animation effects can be applied to words:
+Plusieurs effets d'animation peuvent être appliqués aux mots :
 
 ```html
 <h3 
@@ -142,13 +142,13 @@ Multiple animation effects can be applied to words:
   data-duration="1.5"
   data-easing="power2.out"
 >
-  Words fade and slide simultaneously
+  Les mots apparaissent en fondu et glissent simultanément
 </h3>
 ```
 
-### Custom Easing
+### Easing Personnalisé
 
-Fine-tune the animation motion:
+Affinez le mouvement de l'animation :
 
 ```html
 <p 
@@ -160,66 +160,66 @@ Fine-tune the animation motion:
   data-duration="1.2"
   data-stagger="0.1"
 >
-  Custom easing for smoother word animations
+  Easing personnalisé pour des animations de mots plus fluides
 </p>
 ```
 
 ---
 
-## Best Practices
+## Bonnes Pratiques
 
-1. **Readability**: 
-   - Keep `data-stagger` values between 0.05-0.15s for natural reading flow
-   - Use longer durations for emphasis on important text
+1. **Lisibilité** : 
+   - Gardez les valeurs `data-stagger` entre 0.05-0.15s pour un flux de lecture naturel
+   - Utilisez des durées plus longues pour mettre l'accent sur le texte important
 
-2. **Performance**:
+2. **Performance** :
    ```html
-   <!-- Good: Reasonable number of words -->
+   <!-- Bien : Nombre raisonnable de mots -->
    <h1 data-scroll-text-reveal data-splitting="words">
-     Short impactful headline here
+     Titre court et percutant ici
    </h1>
 
-   <!-- Avoid: Too many words can impact performance -->
+   <!-- À éviter : Trop de mots peuvent impacter la performance -->
    <p data-scroll-text-reveal data-splitting="words">
-     Very long paragraph with many words...
+     Très long paragraphe avec beaucoup de mots...
    </p>
    ```
 
-3. **Animation Timing**:
-   - Use faster animations (`0.8-1.2s`) for UI elements
-   - Use slower animations (`1.2-2s`) for hero sections
-   - Adjust `data-stagger` based on text length
+3. **Timing d'Animation** :
+   - Utilisez des animations plus rapides (0.8-1.2s) pour les éléments d'interface
+   - Utilisez des animations plus lentes (1.2-2s) pour les sections hero
+   - Ajustez `data-stagger` en fonction de la longueur du texte
 
-4. **Direction and Flow**:
+4. **Direction et Flux** :
    ```html
-   <!-- For languages that read left-to-right -->
+   <!-- Pour les langues qui se lisent de gauche à droite -->
    <h2 
      data-scroll-text-reveal 
      data-splitting="words"
      data-animate="slide"
      data-axis="-x"
    >
-     Words slide in from left
+     Les mots glissent depuis la gauche
    </h2>
 
-   <!-- For vertical emphasis -->
+   <!-- Pour l'emphase verticale -->
    <h2 
      data-scroll-text-reveal 
      data-splitting="words"
      data-animate="slide"
      data-axis="y"
    >
-     Words slide up from bottom
+     Les mots glissent depuis le bas
    </h2>
    ```
 
-Remember that word animations are automatically scroll-triggered, activating when the element enters the viewport and reversing on scroll up.
+N'oubliez pas que les animations de mots sont automatiquement déclenchées au défilement, s'activant lorsque l'élément entre dans le viewport et s'inversant lors du défilement vers le haut.
 
 ---
 
-## Common Patterns
+## Motifs Courants
 
-### Hero Headlines
+### Titres Hero
 ```html
 <h1 
   data-scroll-text-reveal 
@@ -229,11 +229,11 @@ Remember that word animations are automatically scroll-triggered, activating whe
   data-stagger="0.1"
   data-duration="1.5"
 >
-  Create impact with animated headlines
+  Créez de l'impact avec des titres animés
 </h1>
 ```
 
-### Navigation Menus
+### Menus de Navigation
 ```html
 <nav 
   data-scroll-text-reveal 
@@ -242,8 +242,8 @@ Remember that word animations are automatically scroll-triggered, activating whe
   data-stagger="0.05"
   data-duration="0.8"
 >
-  Home About Services Contact
+  Accueil À Propos Services Contact
 </nav>
 ```
 
-These patterns provide a good starting point for common use cases in web interfaces.
+Ces motifs fournissent un bon point de départ pour les cas d'utilisation courants dans les interfaces web.

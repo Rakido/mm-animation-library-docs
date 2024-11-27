@@ -1,18 +1,18 @@
 ---
-title: Lines Animation
+title: Animation de Lignes
 nextjs:
   metadata:
-    title: Lines Animation
-    description: Learn how to animate text lines using MoonMoon Animation Library.
+    title: Animation de Lignes
+    description: Apprenez à animer des lignes de texte avec la librairie MoonMoon Animation.
 ---
 
-The MoonMoon Animation Library provides powerful line-based text animations. This guide covers how to animate text lines and all available configuration options.
+La librairie MoonMoon Animation offre de puissantes animations de texte basées sur les lignes. Ce guide couvre l'animation des lignes de texte et toutes les options de configuration disponibles.
 
 ---
 
-## Basic Line Animation
+## Animation de Ligne Basique
 
-To animate lines of text, use `data-scroll-text-reveal` with `data-splitting="lines"`:
+Pour animer des lignes de texte, utilisez `data-scroll-text-reveal` avec `data-splitting="lines"` :
 
 ```html
 <p 
@@ -20,21 +20,21 @@ To animate lines of text, use `data-scroll-text-reveal` with `data-splitting="li
   data-splitting="lines"
   data-animate="fade-in"
 >
-  This text will be split
-  into separate lines that
-  animate independently.
+  Ce texte sera divisé
+  en lignes séparées qui
+  s'animent indépendamment.
 </p>
 ```
 
-The `data-splitting="lines"` attribute automatically splits text blocks into individual lines for animation.
+L'attribut `data-splitting="lines"` divise automatiquement les blocs de texte en lignes individuelles pour l'animation.
 
 ---
 
-## Line Animation Types
+## Types d'Animation
 
-### Lines-Up Animation
+### Animation Lines-Up
 
-The specialized `lines-up` animation creates a revealing effect for each line:
+L'animation spécialisée `lines-up` crée un effet de révélation pour chaque ligne :
 
 ```html
 <div 
@@ -44,15 +44,15 @@ The specialized `lines-up` animation creates a revealing effect for each line:
   data-duration="1.2"
   data-stagger="0.15"
 >
-  Each line will slide up
-  from behind its container,
-  creating a smooth reveal effect.
+  Chaque ligne glissera vers le haut
+  depuis derrière son conteneur,
+  créant un effet de révélation fluide.
 </div>
 ```
 
-### Basic Fade Animation
+### Animation en Fondu
 
-Simple fade animations can be applied to lines:
+Des animations simples en fondu peuvent être appliquées aux lignes :
 
 ```html
 <p 
@@ -63,15 +63,15 @@ Simple fade animations can be applied to lines:
   data-duration="1"
   data-stagger="0.2"
 >
-  Each line fades in
-  one after another,
-  creating a readable sequence.
+  Chaque ligne apparaît en fondu
+  l'une après l'autre,
+  créant une séquence lisible.
 </p>
 ```
 
-### Slide Animation
+### Animation en Glissement
 
-Lines can slide in from any direction:
+Les lignes peuvent glisser depuis n'importe quelle direction :
 
 ```html
 <h2 
@@ -82,19 +82,19 @@ Lines can slide in from any direction:
   data-duration="1.2"
   data-stagger="0.1"
 >
-  These lines will slide
-  in from the right side
-  of the screen.
+  Ces lignes glisseront
+  depuis la droite
+  de l'écran.
 </h2>
 ```
 
 ---
 
-## Timing and Sequence
+## Contrôle du Timing
 
-### Stagger Control
+### Contrôle du Décalage
 
-Control the timing between lines:
+Contrôlez le timing entre les lignes :
 
 ```html
 <div 
@@ -104,15 +104,15 @@ Control the timing between lines:
   data-stagger="0.25"
   data-duration="1.5"
 >
-  Longer gaps between
-  each line reveal
-  for dramatic effect.
+  Des écarts plus longs entre
+  chaque révélation de ligne
+  pour un effet dramatique.
 </div>
 ```
 
-### Custom Animation Sequence
+### Séquence d'Animation Personnalisée
 
-Combine delay and stagger for complex sequences:
+Combinez délai et décalage pour des séquences complexes :
 
 ```html
 <p 
@@ -124,19 +124,19 @@ Combine delay and stagger for complex sequences:
   data-stagger="0.15"
   data-duration="1.2"
 >
-  This paragraph will wait
-  before starting its animation,
-  then reveal line by line.
+  Ce paragraphe attendra
+  avant de commencer son animation,
+  puis se révélera ligne par ligne.
 </p>
 ```
 
 ---
 
-## Advanced Effects
+## Effets Avancés
 
-### Combining Animations
+### Combinaison d'Animations
 
-Multiple animation effects can be applied to lines:
+Plusieurs effets d'animation peuvent être appliqués aux lignes :
 
 ```html
 <div 
@@ -148,15 +148,15 @@ Multiple animation effects can be applied to lines:
   data-duration="1.5"
   data-easing="power2.out"
 >
-  These lines will fade
-  and slide simultaneously,
-  creating a smooth entrance.
+  Ces lignes apparaîtront en fondu
+  et glisseront simultanément,
+  créant une entrée fluide.
 </div>
 ```
 
-### Custom Easing
+### Easing Personnalisé
 
-Fine-tune the animation motion:
+Affinez le mouvement de l'animation :
 
 ```html
 <p 
@@ -167,76 +167,76 @@ Fine-tune the animation motion:
   data-duration="1.2"
   data-stagger="0.15"
 >
-  Custom easing makes
-  these lines move with
-  a unique motion curve.
+  L'easing personnalisé fait
+  bouger ces lignes avec
+  une courbe de mouvement unique.
 </p>
 ```
 
 ---
 
-## Best Practices
+## Bonnes Pratiques
 
-1. **Line Length**:
+1. **Longueur des Lignes** :
    ```html
-   <!-- Good: Clear line breaks -->
+   <!-- Bien : Sauts de ligne clairs -->
    <h1 
      data-scroll-text-reveal 
      data-splitting="lines"
      data-animate="lines-up"
    >
-     Short, impactful lines
-     work best for
-     dramatic reveals.
+     Des lignes courtes et percutantes
+     fonctionnent mieux pour
+     les révélations dramatiques.
    </h1>
 
-   <!-- Avoid: Very long lines -->
+   <!-- À éviter : Lignes très longues -->
    <p data-scroll-text-reveal data-splitting="lines">
-     Very long lines of text that might wrap unpredictably on different screen sizes should be avoided for line animations...
+     Les très longues lignes de texte qui pourraient se retourner de manière imprévisible sur différentes tailles d'écran doivent être évitées pour les animations de lignes...
    </p>
    ```
 
-2. **Timing Considerations**:
-   - Use longer `data-stagger` values (0.15-0.3s) than with words or characters
-   - Consider reading time when setting durations
-   - Longer lines need longer animation durations
+2. **Considérations de Timing** :
+   - Utilisez des valeurs `data-stagger` plus longues (0.15-0.3s) que pour les mots ou caractères
+   - Prenez en compte le temps de lecture lors du réglage des durées
+   - Les lignes plus longues nécessitent des durées d'animation plus longues
 
-3. **Responsive Design**:
-   - Lines will automatically recalculate on screen resize
-   - Test animations at different viewport widths
-   - Consider using CSS max-width to control line length
+3. **Design Responsive** :
+   - Les lignes se recalculent automatiquement lors du redimensionnement de l'écran
+   - Testez les animations sur différentes largeurs de viewport
+   - Utilisez CSS max-width pour contrôler la longueur des lignes
 
-4. **Animation Direction**:
+4. **Direction d'Animation** :
    ```html
-   <!-- Standard bottom-up reveal -->
+   <!-- Révélation standard de bas en haut -->
    <div 
      data-scroll-text-reveal 
      data-splitting="lines"
      data-animate="lines-up"
    >
-     Lines reveal from
-     bottom to top for
-     natural reading flow.
+     Les lignes se révèlent
+     de bas en haut pour
+     un flux de lecture naturel.
    </div>
 
-   <!-- Alternative directions -->
+   <!-- Directions alternatives -->
    <div 
      data-scroll-text-reveal 
      data-splitting="lines"
      data-animate="slide"
      data-axis="-x"
    >
-     Lines can also slide
-     in from the left for
-     variety in presentation.
+     Les lignes peuvent aussi glisser
+     depuis la gauche pour
+     varier la présentation.
    </div>
    ```
 
 ---
 
-## Common Use Cases
+## Cas d'Utilisation Courants
 
-### Article Headlines
+### Titres d'Articles
 ```html
 <h1 
   data-scroll-text-reveal 
@@ -245,13 +245,13 @@ Fine-tune the animation motion:
   data-stagger="0.2"
   data-duration="1.5"
 >
-  Create dramatic
-  article introductions
-  with line reveals.
+  Créez des introductions
+  d'articles dramatiques
+  avec des révélations de lignes.
 </h1>
 ```
 
-### Content Blocks
+### Blocs de Contenu
 ```html
 <div 
   data-scroll-text-reveal 
@@ -260,10 +260,10 @@ Fine-tune the animation motion:
   data-axis="y"
   data-stagger="0.15"
 >
-  Perfect for revealing
-  blocks of content as
-  users scroll down the page.
+  Parfait pour révéler
+  des blocs de contenu pendant
+  que les utilisateurs défilent la page.
 </div>
 ```
 
-Remember that line animations are automatically scroll-triggered, activating when the element enters the viewport and reversing on scroll up. This makes them perfect for long-form content and storytelling experiences.
+N'oubliez pas que les animations de lignes sont automatiquement déclenchées au défilement, s'activant lorsque l'élément entre dans le viewport et s'inversant lors du défilement vers le haut. Cela les rend parfaites pour le contenu long et les expériences narratives.

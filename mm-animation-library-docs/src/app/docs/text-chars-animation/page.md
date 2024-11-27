@@ -1,18 +1,18 @@
 ---
-title: Text & Characters Animation
+title: Animation de Caractères
 nextjs:
   metadata:
-    title: Text & Characters Animation
-    description: Learn how to animate text and characters using MoonMoon Animation Library.
+    title: Animation de Caractères
+    description: Apprenez à animer du texte et des caractères avec la librairie MoonMoon Animation.
 ---
 
-The MoonMoon Animation Library provides powerful text animation capabilities through simple data attributes. This guide covers character-based animations and all related configuration options.
+La librairie MoonMoon Animation offre de puissantes capacités d'animation de texte à travers des attributs de données simples. Ce guide couvre les animations basées sur les caractères et toutes les options de configuration associées.
 
 ---
 
-## Basic Character Animation
+## Animation de Caractères Basique
 
-To animate characters, you'll need to use two core attributes: `data-scroll-text-reveal` and `data-splitting`.
+Pour animer des caractères, vous aurez besoin de deux attributs principaux : `data-scroll-text-reveal` et `data-splitting`.
 
 ```html
 <h1 
@@ -20,20 +20,19 @@ To animate characters, you'll need to use two core attributes: `data-scroll-text
   data-splitting="chars"
   data-animate="fade-in"
 >
-  Animate each character
+  Animer chaque caractère
 </h1>
 ```
 
-
-The `data-scroll-text-reveal` attribute initializes the animation system, while `data-splitting="chars"` tells the library to split the text into individual characters.
+L'attribut `data-scroll-text-reveal` initialise le système d'animation, tandis que `data-splitting="chars"` indique à la librairie de diviser le texte en caractères individuels.
 
 ---
 
-## Animation Types
+## Types d'Animation
 
-### Fade Animation
+### Animation en Fondu
 
-The simplest animation is fade-in. You can control the starting opacity using `data-fade-start`.
+L'animation la plus simple est le fondu. Vous pouvez contrôler l'opacité de départ avec `data-fade-start`.
 
 ```html
 <p 
@@ -44,13 +43,13 @@ The simplest animation is fade-in. You can control the starting opacity using `d
   data-duration="1"
   data-stagger="0.05"
 >
-  Each character fades in sequence
+  Chaque caractère apparaît en séquence
 </p>
 ```
 
-### Slide Animation
+### Animation en Glissement
 
-Characters can slide in from any direction using the `slide` animation type with `data-axis`.
+Les caractères peuvent glisser depuis n'importe quelle direction en utilisant le type d'animation `slide` avec `data-axis`.
 
 ```html
 <h2 
@@ -61,23 +60,23 @@ Characters can slide in from any direction using the `slide` animation type with
   data-duration="1.2"
   data-stagger="0.03"
 >
-  Characters sliding from bottom
+  Caractères glissant depuis le bas
 </h2>
 ```
 
-Available axis values:
-- `x` - Slide from right
-- `-x` - Slide from left
-- `y` - Slide from bottom
-- `-y` - Slide from top
+Valeurs d'axe disponibles :
+- `x` - Glissement depuis la droite
+- `-x` - Glissement depuis la gauche
+- `y` - Glissement depuis le bas
+- `-y` - Glissement depuis le haut
 
 ---
 
-## Timing Controls
+## Contrôles de Timing
 
-### Stagger Effect
+### Effet de Décalage
 
-The `data-stagger` attribute controls the delay between each character's animation:
+L'attribut `data-stagger` contrôle le délai entre l'animation de chaque caractère :
 
 ```html
 <div 
@@ -86,13 +85,13 @@ The `data-stagger` attribute controls the delay between each character's animati
   data-animate="fade-in"
   data-stagger="0.1"
 >
-  Characters animate with 0.1s delay between each
+  Les caractères s'animent avec 0.1s de délai entre chacun
 </div>
 ```
 
-### Duration and Delay
+### Durée et Délai
 
-Control the overall timing with `data-duration` and `data-delay`:
+Contrôlez le timing global avec `data-duration` et `data-delay` :
 
 ```html
 <span 
@@ -102,17 +101,17 @@ Control the overall timing with `data-duration` and `data-delay`:
   data-duration="2"
   data-delay="0.5"
 >
-  Slower animation that starts after 0.5s
+  Animation plus lente qui commence après 0.5s
 </span>
 ```
 
 ---
 
-## Custom Easing
+## Easing Personnalisé
 
-### Using GSAP Easings
+### Utilisation des Easings GSAP
 
-The animation easing can be customized using `data-easing`:
+L'easing de l'animation peut être personnalisé avec `data-easing` :
 
 ```html
 <h3 
@@ -121,13 +120,13 @@ The animation easing can be customized using `data-easing`:
   data-animate="fade-in"
   data-easing="power2.inOut"
 >
-  Smooth easing animation
+  Animation avec easing fluide
 </h3>
 ```
 
-### Custom Cubic-Bezier
+### Cubic-Bezier Personnalisé
 
-For precise control, use custom cubic-bezier values:
+Pour un contrôle précis, utilisez des valeurs cubic-bezier personnalisées :
 
 ```html
 <p 
@@ -136,15 +135,15 @@ For precise control, use custom cubic-bezier values:
   data-animate="fade-in"
   data-easing="0.7,0,0.3,1"
 >
-  Custom easing curve animation
+  Animation avec courbe d'easing personnalisée
 </p>
 ```
 
 ---
 
-## Combining Animations
+## Combinaison d'Animations
 
-Multiple animation effects can be combined:
+Plusieurs effets d'animation peuvent être combinés :
 
 ```html
 <h1 
@@ -155,17 +154,17 @@ Multiple animation effects can be combined:
   data-stagger="0.04"
   data-duration="1.5"
 >
-  Fade and slide combination
+  Combinaison de fondu et glissement
 </h1>
 ```
 
 ---
 
-## Best Practices
+## Bonnes Pratiques
 
-1. **Performance**: Keep `data-stagger` values small (0.02-0.1s) for smoother animations
-2. **Readability**: For longer text blocks, consider using `words` splitting instead of `chars`
-3. **Timing**: Adjust `data-duration` based on text length - longer text might need longer duration
-4. **Scroll Trigger**: Animations automatically trigger when elements enter the viewport
+1. **Performance** : Gardez les valeurs `data-stagger` petites (0.02-0.1s) pour des animations plus fluides
+2. **Lisibilité** : Pour les blocs de texte plus longs, préférez le découpage en `words` plutôt qu'en `chars`
+3. **Timing** : Ajustez `data-duration` en fonction de la longueur du texte - un texte plus long peut nécessiter une durée plus longue
+4. **Déclenchement au Défilement** : Les animations se déclenchent automatiquement lorsque les éléments entrent dans le viewport
 
-Remember that all character animations are scroll-triggered by default, playing when the element enters the viewport and reversing when it leaves.
+N'oubliez pas que toutes les animations de caractères sont déclenchées au défilement par défaut, s'activant lorsque l'élément entre dans le viewport et s'inversant lorsqu'il en sort.
